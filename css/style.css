@@ -1,0 +1,257 @@
+html{
+  scroll-behavior: smooth;
+}
+
+:root{
+  --swiper-theme-color: #484848;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+
+/* header slider */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper{
+    height: calc(100vh - 80px - 86px);
+}
+
+.swiper-slide {
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* feedback slider */
+
+.slider-container {
+	width: 100%;
+  height: 400px;
+	background: #f2f0ee;
+	position: relative;
+}
+.feedback {
+	width: 100%;
+	height: 100%;
+}
+
+.feedback .swiper-slide {
+	font-size: 18px;
+	background: #fdfdfc;
+	padding: 31.5px;
+	font-size: 18px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.feedback-button-next,
+.feedback-button-prev {
+	--offset: 15px;
+	--width: 32px;
+	position: absolute;
+	width: var(--width);
+	height: var(--width);
+	top: calc(50% - var(--width) / 2);
+	background-repeat: no-repeat !important;
+	background-size: contain !important;
+	background-position: center !important;
+}
+.feedback-button-next {
+	right: calc((var(--offset) + var(--width)) * -1);
+}
+.feedback-button-next.swiper-button-disabled,
+.feedback-button-prev.swiper-button-disabled {
+	opacity: 0.5;
+}
+.feedback-button-prev {
+	left: calc((var(--offset) + var(--width)) * -1);
+}
+@media (max-width: 760px) {
+  .feedback-button-next,
+  .feedback-button-prev {
+    --offset: 5px;
+    transform: rotate(90deg);
+  }
+}
+
+
+.feedback-title{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	line-height: 27px;
+  font-size: 16px;
+}
+.feedback-message{
+	--lines: 5;
+	font-size: 14px;
+	line-height: 22px;
+	height: calc(22px * (var(--lines) + 1));
+	width: 100%;
+	display: -webkit-box;
+	-webkit-line-clamp: var(--lines);
+	-webkit-box-orient: vertical;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.feedback-photos{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 24px;
+	align-self: end;
+}
+.feedback-photos img{
+	display: block;
+	width: calc((100% - 24px * 2) / 3);
+}
+.feedback-rating{
+  width: 100px;
+}
+
+
+
+/* other */
+.anchor, footer{
+  background: #F2EEEE;
+}
+footer .nav-link{
+  padding-left: 0;
+  padding-right: 0;
+  color: #000;
+}
+.dropdown > .nav-link::after{
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 11px;
+  content: '\f107';
+  display: block;
+  text-align: center;
+  margin: 5px auto 0;
+  height: 0;
+  border: 0;
+}
+.dropdown > .nav-link.show::after{
+  content: '\f106';
+}
+@media (max-width: 991px) {
+  .dropdown > .nav-link::after{
+    display: inline-block;
+    margin-left: 8px;
+  }
+}
+
+
+
+/* gallery */
+.container.gallery-container {
+  background-color: #fff;
+  color: #35373a;
+  min-height: 100vh;
+  padding: 30px 50px;
+}
+
+.gallery-container h1 {
+  text-align: center;
+  margin-top: 50px;
+  font-family: 'Droid Sans', sans-serif;
+  font-weight: bold;
+}
+
+.gallery-container p.page-description {
+  text-align: center;
+  margin: 25px auto;
+  font-size: 18px;
+  color: #999;
+}
+
+.tz-gallery {
+  padding: 20px;
+  float: left;
+}
+
+/* Override bootstrap column paddings */
+.tz-gallery .row{
+  display: block;
+  float: left;
+}
+.tz-gallery .row > div {
+  padding: 10px;
+  float: left;
+  position: relative;
+}
+
+
+.tz-gallery .lightbox img {
+  width: 100%;
+  border-radius: 0;
+  position: relative;
+}
+
+.tz-gallery .lightbox:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -13px;
+  margin-left: -13px;
+  opacity: 0;
+  color: #fff;
+  font-size: 26px;
+  font-family: "Font Awesome 6 Free";
+  font-weight: 600;
+  content: '\f00e';
+  pointer-events: none;
+  z-index: 9000;
+  transition: 0.4s;
+}
+
+
+.tz-gallery .lightbox:after {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 10px;
+  right: 10px;
+  opacity: 0;
+  background-color: rgba(46, 132, 206, 0.7);
+  content: '';
+  transition: 0.4s;
+}
+
+.tz-gallery .lightbox:hover:after,
+.tz-gallery .lightbox:hover:before {
+  opacity: 1;
+}
+
+.baguetteBox-button {
+  background-color: transparent !important;
+}
+
+@media(max-width: 768px) {
+  body {
+      padding: 0;
+  }
+}
